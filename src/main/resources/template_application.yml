@@ -1,0 +1,25 @@
+spring:
+  jackson:
+    default-property-inclusion: non_null
+    property-naming-strategy: SNAKE_CASE
+  cloud:
+    openfeign:
+      oauth2:
+        enabled: true
+        clientRegistrationId: pantrypal_backend
+      client:
+        config:
+          open-ai-api:
+            url: https://api.openai.com/v1
+            loggerLevel: basic
+            default-request-headers:
+              Authorization: "Bearer <API_key>"
+  data:
+    mongodb:
+      username: <username>
+      password: <password>
+      database: <db>
+      host: <host>
+      uri: <uri>
+  level:
+    org.apache.coyote.http11.Http11InputBuffer: DEBUG # Incoming HTTP requests
